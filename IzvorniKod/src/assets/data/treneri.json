@@ -1,0 +1,10 @@
+{
+    "treneri":[
+        {   
+            "osobaID": 2,
+            "ime": "Hikaru",
+            "prezime": "Nakamura",
+            "titula": "GM"
+        }
+    ]
+}

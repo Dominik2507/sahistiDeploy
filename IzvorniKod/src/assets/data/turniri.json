@@ -1,0 +1,37 @@
+{
+    "turniri": [
+        {
+            "zanimljivostID": 1,
+            "datumObjave": "25.12.2022",
+            "naslov": "Bullet 2+1",
+            "opis": "S obzirom na nadolazeće blagdane odlučili smo otkazati sve turnire i treninge do daljnjega.",
+            "aktivni": true,
+            "osobaID": null,
+            "vrijemeturnir": "20:00",
+            "datumTurnira": "1.1.2023.",
+            "mjesto": "FER"
+        },
+        {
+            "zanimljivostID": 2,
+            "datumObjave": "Rapid 10+15",
+            "naslov": "Rapid 10+15",
+            "opis": "S obzirom na nadolazeće blagdane odlučili smo otkazati sve turnire i treninge do daljnjega.",
+            "aktivni": true,
+            "osobaID": null,
+            "vrijemeturnir": "10:00",
+            "datumTurnira": "1.1.2023.",
+            "mjesto": "FER"
+        },
+        {
+            "zanimljivostID": 3,
+            "datumObjave": "Clasical",
+            "naslov": "Clasical",
+            "opis": "S obzirom na nadolazeće blagdane odlučili smo otkazati sve turnire i treninge do daljnjega.",
+            "aktivni": true,
+            "osobaID": null,
+            "vrijemeturnir": "12:15",
+            "datumTurnira": "1.1.2023.",
+            "mjesto": "FER"
+        }
+    ]
+}

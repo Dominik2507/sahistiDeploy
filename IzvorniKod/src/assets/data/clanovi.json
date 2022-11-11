@@ -1,0 +1,12 @@
+{
+    "clanovi":[
+        {
+            "osobaID": 3,
+            "ime": "Ivan",
+            "prezime": "Horvat",
+            "clanOd": "2021-07-08",
+            "bodovi": 500,
+            "suspendiran": false
+        }
+    ]
+}
