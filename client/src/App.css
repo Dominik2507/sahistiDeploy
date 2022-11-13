@@ -1,0 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+::placeholder{
+    color: #e85a4f;
+    opacity: 1;
+  }

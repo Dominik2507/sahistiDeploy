@@ -1,0 +1,29 @@
+  {
+    "users": [
+        {
+            "osobaID": 1,
+            "uloga": "admin",
+            "korisnickoIme": "admin",
+            "lozinka": "123",
+            "email": "admin@sah.hr",
+            "blokiran": false
+        },
+        {
+            "osobaID": 2,
+            "uloga": "trener",
+            "korisnickoIme": "trener",
+            "lozinka": "123",
+            "email": "trener@sah.hr",
+            "blokiran": false
+        },
+        {
+            "osobaID": 3,
+            "uloga": "clan",
+            "korisnickoIme": "clan",
+            "lozinka": "123",
+            "email": "clan@sah.hr",
+            "blokiran": false
+        }
+    ]
+}
+
