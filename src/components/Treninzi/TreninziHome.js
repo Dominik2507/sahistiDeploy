@@ -7,13 +7,13 @@ import {TreningContainer,
     Section
 } from "./TreninziStyle";
 import Treninzi from "../../assets/data/treninzi.json"
-import { getTreninzi } from "../../utils/FetchFunction";
+//import { getTreninzi } from "../../utils/FetchFunction";
 
 const TreninziHome = (props) => {
     const [treninzi,setTreninzi]= useState([]);
     let rows=[];
 
-    useEffect(()=>{
+    /* useEffect(()=>{
         getTreninzi().then(
             (item)=>{
                 console.log(item)
@@ -21,8 +21,8 @@ const TreninziHome = (props) => {
             }
         )
 
-    }, [])
-    for(let Trening of true ? treninzi: Treninzi.treninzi){
+    }, []) */
+    for(let Trening of false ? treninzi: Treninzi.treninzi){
         rows.push(
         <TreningContainer>
             <NaslovTreninga>{Trening.vrijemeTreninga+ ", "+ Trening.datumTreninga + ", " + Trening.trener}</NaslovTreninga>

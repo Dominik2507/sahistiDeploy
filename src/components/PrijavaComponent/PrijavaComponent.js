@@ -2,7 +2,7 @@ import React from "react";
 import Users from "../../assets/data/users.json"
 import { ButtonFlexContainer, ButtonNaslov, Section, InputButton, InputButtonContainer, InputLabel, FormSection, InputContainer, InputBox} from "./PrijavaStyle";
 import { useState } from "react";
-import { logIn } from "../../utils/FetchFunction";
+//import { logIn } from "../../utils/FetchFunction";
 
 
 
@@ -18,7 +18,7 @@ const PrijavaComponent= (props) => {
     }
    
     let HandleSubmit= ()=> {
-        logIn(form).then(
+       /*  logIn(form).then(
             (result)=>{
                 document.getElementById("errorMsg").hidden=true;
                 let json=result;
@@ -29,7 +29,7 @@ const PrijavaComponent= (props) => {
                 let a = document.getElementById('formlink')
                 a.click()
         
-        })
+        }) */
     }
 
     return (

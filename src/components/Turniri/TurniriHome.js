@@ -7,12 +7,12 @@ import {TurnirContainer,
     Section
 } from "./TurniriStyle";
 import Turniri from "../../assets/data/turniri.json"
-import { getTurniri } from "../../utils/FetchFunction";
+//import { getTurniri } from "../../utils/FetchFunction";
 
 const TurniriHome = (props) => {
     const [turniri,setTurniri]= useState([]);
 
-    useEffect(()=>{
+    /* useEffect(()=>{
         getTurniri().then(
             (item)=>{
                 console.log(item)
@@ -20,9 +20,9 @@ const TurniriHome = (props) => {
             }
         )
 
-    }, [])
+    }, []) */
     let rows=[];
-    for(let Turnir of true? turniri:Turniri.turniri){
+    for(let Turnir of false? turniri:Turniri.turniri){
         rows.push(
         <TurnirContainer>
             <NaslovTurnira>{Turnir.naslov + ", " + Turnir.mjesto}</NaslovTurnira>

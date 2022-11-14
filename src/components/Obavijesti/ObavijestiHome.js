@@ -7,13 +7,13 @@ import {ObavijestContainer,
     Section
 } from "./ObavijestiStyle";
 import Obavijesti from "../../assets/data/obavijesti.json"
-import { getObavijesti } from "../../utils/FetchFunction";
+//import { getObavijesti } from "../../utils/FetchFunction";
 
 const ObavijestiHome = (props) => {
     const [obavijesti,setObavijesti]= useState([]);
     let rows=[];
 
-    useEffect(()=>{
+    /* useEffect(()=>{
         getObavijesti().then(
             (item)=>{
                 console.log(item)
@@ -21,8 +21,8 @@ const ObavijestiHome = (props) => {
             }
         )
 
-    }, [])
-    for(let obavijest of true ? obavijesti :Obavijesti.obavijesti){
+    }, []) */
+    for(let obavijest of false ? obavijesti :Obavijesti.obavijesti){
         rows.push(
         <ObavijestContainer>
             <NaslovObavijesti>{obavijest.naslov}</NaslovObavijesti>
