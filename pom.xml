@@ -76,6 +76,8 @@
 					<processTypes>
 					<web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
 					</processTypes>
+					<source>17</source>
+          			<target>17</target>
 				</configuration>
 			</plugin>
 			<plugin>
