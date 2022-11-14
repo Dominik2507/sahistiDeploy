@@ -3,9 +3,11 @@ import { ButtonFlexContainer, ButtonNaslov, Section, InfoContainer } from "./Pro
 import ClanProfil from "./ClanProfil"
 import AdminProfil from "./AdminProfil"
 import TrenerProfil from "./TrenerProfil"
+import { getProfil } from "../../utils/FetchFunction";
+
 
 const ProfilComponent= (props) => {
-   
+    getProfil(props.user.userId, props.user.role);
     return (
         <Section>
             

@@ -1,6 +1,6 @@
   export async function logIn(form) {
     return await fetch(
-      "http://localhost:8080/prijava/", {
+      "https://sahisti-server.herokuapp.com/prijava/", {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(form)
@@ -26,7 +26,7 @@
 
   export async function registration(form) {
     return await fetch(
-      "http://localhost:8080/registracija", {
+      "https://sahisti-server.herokuapp.com/registracija", {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(form)
@@ -53,7 +53,7 @@
 
   export async function getTreninzi() {
     return await fetch(
-      "http://localhost:8080/trening/getAll")
+      "https://sahisti-server.herokuapp.com/trening/getAll")
       .then((response) => {
         return response.json()
       })
@@ -63,7 +63,7 @@
 
   export async function getTurniri() {
     return await fetch(
-      "http://localhost:8080/turnir/getAll")
+      "https://sahisti-server.herokuapp.com/turnir/getAll")
       .then((response) => {
         return response.json()
       })
@@ -73,7 +73,7 @@
 
   export async function getObavijesti() {
     return await fetch(
-      "http://localhost:8080/zanimljivost/getAll")
+      "https://sahisti-server.herokuapp.com/zanimljivost/getAll")
       .then((response) => {
         return response.json()
       })
@@ -81,3 +81,28 @@
     
   }
   
+  export async function getProfil(body) {
+    return await fetch(
+      "https://sahisti-server.herokuapp.com/profil", {
+        method:"POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(body)
+      })
+      .then((response) => {
+        return response.json();
+      })
+      .catch((err) => console.log("err"))
+
+  }
+
+  export async function odjava() {
+    return await fetch(
+      "https://sahisti-server.herokuapp.com/odjava")
+      .then((response) => {
+        if(response.status == 200) {
+          console.log("Uspjesna odjava!")
+        }
+      })
+      .catch((err) => console.log("err"));
+
+  }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import {HeaderContainer,
     Naslov,
@@ -8,8 +9,8 @@ const Header = (props) => {
 
    if(props.role===null) return(
     <HeaderContainer>
-        <Naslov><a href="/">ŠK Zabranjeno pushanje</a></Naslov>
-        <NavButton href="/prijava"> Prijavi se</NavButton>
+        <Naslov><Link to="/">ŠK Zabranjeno pushanje</Link></Naslov>
+        <Link to="prijava"><NavButton> Prijavi se</NavButton></Link>
     </HeaderContainer>
    );
 
@@ -17,8 +18,8 @@ const Header = (props) => {
 
     return (
         <HeaderContainer>
-            <Naslov><a href="/">ŠK Zabranjeno pushanje</a></Naslov>
-            <NavButton href="/profil"> Profil</NavButton>
+            <Naslov><Link to="/">ŠK Zabranjeno pushanje</Link></Naslov>
+            <Link to="/profil"><NavButton> Profil</NavButton></Link>
         </HeaderContainer>
     );
 };

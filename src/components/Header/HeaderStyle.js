@@ -8,6 +8,9 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 50px 0 50px;
+  a{
+    text-decoration: none;
+  }
 `;
 export const Naslov = styled.b`
   font-size: 2.5em;
@@ -19,9 +22,9 @@ export const Naslov = styled.b`
     color: #E85A4F;
   }
 `;
-export const NavButton = styled.a`
+export const NavButton = styled.div`
   font-size: 2em;
-  text-decoration: none;
+  
   color: #E85A4F;
   
   text-aligns: center;

@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ButtonFlexContainer, ButtonNaslov, Section, InfoContainer } from "./ProfilStyle";
 import Treneri from "../../assets/data/treneri.json"
-const getUserData= (userID)=> {
+import { getProfil } from "../../utils/FetchFunction";
 
-    for(let trener of Treneri.treneri){
-        if(userID.toString()===trener.osobaID.toString()) return trener;
-    }
-}
+
 const TrenerProfil= (props) => {
-   
-    let userData=getUserData(props.user.userId, props.user.role);
-
+    const [userData, setUserData]= useState({ime:"", prezime:"", clanOd:"", bodovi:0})
+    useEffect(()=>{
+        //console.log(props.user)
+        getProfil(props.user).then((result)=>{
+            console.log(result);
+            setUserData(result)
+        })
+    },[])
     return (
         <Section>
            <InfoContainer>

@@ -2,9 +2,9 @@ import React from "react";
 import Users from "../../assets/data/users.json"
 import { ButtonFlexContainer, ButtonNaslov, Section, InputButton, InputButtonContainer, InputLabel, FormSection, InputContainer, InputBox} from "./PrijavaStyle";
 import { useState } from "react";
-//import { logIn } from "../../utils/FetchFunction";
+import { logIn } from "../../utils/FetchFunction";
 
-
+import { Link } from "react-router-dom";
 
 const PrijavaComponent= (props) => {
     
@@ -18,18 +18,21 @@ const PrijavaComponent= (props) => {
     }
    
     let HandleSubmit= ()=> {
-       /*  logIn(form).then(
+        logIn(form).then(
             (result)=>{
                 document.getElementById("errorMsg").hidden=true;
+                
+
                 let json=result;
                 console.log(JSON.stringify(json))
+                document.cookie = `user=${JSON.stringify(json)}`;
                 localStorage.setItem("user", JSON.stringify(json)) // ovo maknut kad se role prebaci u state
                 // ovdje treba dodat spremanje body-a u state
                  
                 let a = document.getElementById('formlink')
                 a.click()
         
-        }) */
+        })
     }
 
     return (
@@ -55,7 +58,8 @@ const PrijavaComponent= (props) => {
                     <InputButton type="reset" onClick={()=>handleForm({username:"", password:""})}></InputButton>
                     <InputButton type="submit" value="Prijava"></InputButton>
                 </InputButtonContainer>
-                <InputButtonContainer>Nemaš profil? <a href="/registracija">Registriraj se!</a></InputButtonContainer>
+                <InputButtonContainer>Nemaš profil? <Link to="/registracija">Registriraj se!</Link></InputButtonContainer>
+            
             </form>
 
         </FormSection>

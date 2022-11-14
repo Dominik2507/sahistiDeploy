@@ -3,7 +3,7 @@ import Users from "../../assets/data/users.json"
 import { ButtonFlexContainer, ButtonNaslov, Section, InputButton, InputButtonContainer, InputLabel, FormSection, InputContainer, InputBox, InputOption} from "./RegistracijaStyle";
 import { useState } from "react";
 import { registration } from "../../utils/FetchFunction";
-
+import { Link } from "react-router-dom";
 const RegistracijaComponent= (props) => {
     
     const [form, handleForm] = useState(
@@ -13,7 +13,7 @@ const RegistracijaComponent= (props) => {
             firstname:"",
             lastname:"",
             email:"",
-            role:"Član"
+            role:"clan"
         }
     )
 
@@ -73,18 +73,18 @@ const RegistracijaComponent= (props) => {
                 </InputContainer>
                 <InputContainer onChange={(e)=>handleInputChange(e)}>
                     <InputLabel for="role">Uloga: </InputLabel>
-                    <input type="radio" id="role1" name="role" value="Admin" checked={form.role==="Admin"}/>
+                    <input type="radio" id="role1" name="role" value="admin" checked={form.role==="admin"}/>
                     <label for="role1">Admin</label>
-                    <input type="radio" id="role2" name="role" value="Trener" checked={form.role==="Trener"}/>
+                    <input type="radio" id="role2" name="role" value="trener" checked={form.role==="trener"}/>
                     <label for="role2">Trener</label>
-                    <input type="radio" id="role3" name="role" value="Član" checked={form.role==="Član"}/>
+                    <input type="radio" id="role3" name="role" value="clan" checked={form.role==="clan"}/>
                     <label for="role3">Član</label>
                 </InputContainer>
                 <InputButtonContainer>
                     <InputButton type="reset" onClick={()=>handleForm({username:"", password:""})}></InputButton>
                     <InputButton type="submit" value="Registriraj se"></InputButton>
                 </InputButtonContainer>
-                <InputButtonContainer>Imaš profil? <a href="/prijava">Prijavi se!</a></InputButtonContainer>
+                <InputButtonContainer>Imaš profil? <Link to="/prijava">Prijavi se!</Link></InputButtonContainer>
             </form>
 
         </FormSection>

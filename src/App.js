@@ -12,9 +12,14 @@ import Home from "./pages/Home";
 import Prijava from "./pages/Prijava";
 import Profil from "./pages/Profil";
 import Registracija from "./pages/Registracija"
+import Cookies from "js-cookie"
 
 
-let resolveUser=()=>{return JSON.parse(localStorage.getItem("user")) || {uloga: null, osobaID: null}};
+let resolveUser=()=>{
+  let user=Cookies.get('user')
+  console.log(user)
+  return user!==undefined ?  JSON.parse(user) : {uloga: null, osobaID: null}
+};
 
 
 function App() {

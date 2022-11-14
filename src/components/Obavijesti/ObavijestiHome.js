@@ -7,24 +7,24 @@ import {ObavijestContainer,
     Section
 } from "./ObavijestiStyle";
 import Obavijesti from "../../assets/data/obavijesti.json"
-//import { getObavijesti } from "../../utils/FetchFunction";
+import { getObavijesti } from "../../utils/FetchFunction";
 
 const ObavijestiHome = (props) => {
     const [obavijesti,setObavijesti]= useState([]);
     let rows=[];
 
-    /* useEffect(()=>{
+    useEffect(()=>{
         getObavijesti().then(
             (item)=>{
-                console.log(item)
+                //console.log(item)
                 setObavijesti(item)
             }
         )
 
-    }, []) */
-    for(let obavijest of false ? obavijesti :Obavijesti.obavijesti){
+    }, [])
+    for(let obavijest of true ? obavijesti :Obavijesti.obavijesti){
         rows.push(
-        <ObavijestContainer>
+        <ObavijestContainer key={obavijest.naslov + obavijest.datumObjave}>
             <NaslovObavijesti>{obavijest.naslov}</NaslovObavijesti>
             <OpisObavijesti>{obavijest.opis}</OpisObavijesti>
         </ObavijestContainer>
