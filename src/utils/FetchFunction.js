@@ -1,28 +1,26 @@
+import Cookies from "js-cookie";
+
   export async function logIn(form) {
     return await fetch(
       "https://sahisti-server.herokuapp.com/prijava/", {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(form)
+        body: JSON.stringify(form),
+        credentials: 'include'
       }
     )
       .then((response) => {
-        
-        if(response.status == 200) {
-          
-          return response.json()
+        if(response.status === 200) {
+          return response.json();
         } else {
           console.log("NEUSPJESNA prijava")
           document.getElementById("errorMsg").hidden=false;
           document.getElementById("errorMsg").innerHTML="Unijeli ste krivo korisnicko ime ili lozinku!";
         }
-        
       })
-      .catch((err) => console.log("err"));
+      .catch((err) => console.log("err logIn"));
     
   }
-
-  //napisati funkciju logOut() kad vidimo kako se ona zove iz ProfilComponent.js
 
   export async function registration(form) {
     return await fetch(
@@ -34,7 +32,7 @@
     )
       .then((response) => {
                 
-        if(response.status == 200) {
+        if(response.status === 200) {
  
           console.log("Uspjesna registracija")
           
@@ -47,7 +45,7 @@
         }
         
       })
-      .catch((err) => console.log("err"));
+      .catch((err) => console.log("err registration"));
     
   }
 
@@ -57,7 +55,7 @@
       .then((response) => {
         return response.json()
       })
-      .catch((err) => console.log("err"));
+      .catch((err) => console.log("err getTreninzi"));
     
   }
 
@@ -67,7 +65,7 @@
       .then((response) => {
         return response.json()
       })
-      .catch((err) => console.log("err"));
+      .catch((err) => console.log("err getTurniri"));
     
   }
 
@@ -77,32 +75,45 @@
       .then((response) => {
         return response.json()
       })
-      .catch((err) => console.log("err"));
+      .catch((err) => console.log("err getObavijesti"));
     
   }
   
-  export async function getProfil(body) {
+  export async function getProfil() {
     return await fetch(
       "https://sahisti-server.herokuapp.com/profil", {
-        method:"POST",
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(body)
+        credentials: 'include'
       })
       .then((response) => {
-        return response.json();
+        if(response.status === 200) {
+          console.log("Uspjesan dohvat profila!");
+          return response.json();
+        } else if(response.status === 404) {
+          console.log("session istekao!");
+          
+          if(Cookies.get('user') !== undefined) {
+            Cookies.remove('user');
+          }
+          
+          alert("Your session expired. Please login again.");
+          window.location.href = "http://localhost:3000";
+          
+        }
       })
-      .catch((err) => console.log("err"))
+      .catch((err) => console.log("err getProfil"))
 
   }
 
-  export async function odjava() {
+  export async function logout() {
     return await fetch(
-      "https://sahisti-server.herokuapp.com/odjava")
+      "https://sahisti-server.herokuapp.com/odjava", {
+        credentials: 'include'
+      })
       .then((response) => {
-        if(response.status == 200) {
-          console.log("Uspjesna odjava!")
+        if(response.status === 200) {
+          console.log("Uspjesan logout!");
         }
       })
-      .catch((err) => console.log("err"));
+      .catch((err) => console.log("err logout"));
 
   }

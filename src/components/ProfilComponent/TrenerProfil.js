@@ -8,19 +8,17 @@ const TrenerProfil= (props) => {
     const [userData, setUserData]= useState({ime:"", prezime:"", clanOd:"", bodovi:0})
     useEffect(()=>{
         //console.log(props.user)
-        getProfil(props.user).then((result)=>{
+        getProfil().then((result)=>{
             console.log(result);
             setUserData(result)
         })
     },[])
     return (
-        <Section>
-           <InfoContainer>
-                Informacije o profilu
-                <div>{userData.titula + " "+ userData.ime + " " + userData.prezime}</div>
-            </InfoContainer>
-            <ButtonNaslov>PROFIL ZA: Trener </ButtonNaslov>
-        </Section>
+        <InfoContainer>
+            <div>Korisnik: {userData.titula + " "+ userData.ime + " " + userData.prezime}</div>
+            <div>Uloga: Trener</div>
+        </InfoContainer>
+       
     );
 };
 export default TrenerProfil;

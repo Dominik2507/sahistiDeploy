@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Users from "../../assets/data/users.json"
 import { ButtonFlexContainer, ButtonNaslov, Section, InputButton, InputButtonContainer, InputLabel, FormSection, InputContainer, InputBox} from "./PrijavaStyle";
 import { useState } from "react";
@@ -16,19 +16,15 @@ const PrijavaComponent= (props) => {
         const name = target.name;
         handleForm({...form,[name]:value})
     }
-   
+   useEffect(()=>{ document.getElementById("errorMsg").hidden=true;}, [])
     let HandleSubmit= ()=> {
         logIn(form).then(
             (result)=>{
-                document.getElementById("errorMsg").hidden=true;
-                
 
                 let json=result;
-                console.log(JSON.stringify(json))
-                document.cookie = `user=${JSON.stringify(json)}`;
-                localStorage.setItem("user", JSON.stringify(json)) // ovo maknut kad se role prebaci u state
-                // ovdje treba dodat spremanje body-a u state
-                 
+                if(json===undefined) return;
+
+                document.getElementById("errorMsg").hidden=true;
                 let a = document.getElementById('formlink')
                 a.click()
         

@@ -17,8 +17,7 @@ import Cookies from "js-cookie"
 
 let resolveUser=()=>{
   let user=Cookies.get('user')
-  console.log(user)
-  return user!==undefined ?  JSON.parse(user) : {uloga: null, osobaID: null}
+  return (user!="undefined" && user!==undefined) ?  JSON.parse(user) : {uloga: null, osobaID: null}
 };
 
 

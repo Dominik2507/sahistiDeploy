@@ -14,21 +14,20 @@ const ClanProfil= (props) => {
    const [userData, setUserData]= useState({ime:"", prezime:"", clanOd:"", bodovi:0})
    useEffect(()=>{
        //console.log(props.user)
-       getProfil(props.user).then((result)=>{
+       getProfil().then((result)=>{
            console.log(result);
            setUserData(result)
        })
    },[])
     return (
-        <Section>
-           <InfoContainer>
-                Informacije o profilu
-                <div>{userData.ime + " " + userData.prezime}</div>
-                <div>Član od: {userData.clanOd}</div>
-                <div>Bodovi: {userData.bodovi}</div>
-            </InfoContainer>
-            <ButtonNaslov>PROFIL ZA: ČLAN </ButtonNaslov>
-        </Section>
+
+        <InfoContainer>
+            <div>Korisnik: {userData.ime + " " + userData.prezime}</div>
+            <div>Uloga: Član</div>
+            <div>Član od: {userData.clanOd}</div>
+            <div>Bodovi: {userData.bodovi}</div>
+        </InfoContainer>
+
     );
 };
 export default ClanProfil;

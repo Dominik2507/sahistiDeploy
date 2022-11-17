@@ -13,19 +13,18 @@ const AdminProfil= (props) => {
     const [userData, setUserData]= useState({ime:"", prezime:""})
     useEffect(()=>{
         //console.log(props.user)
-        getProfil(props.user).then((result)=>{
+        getProfil().then((result)=>{
             console.log(result);
             setUserData(result)
         })
     },[])
     return (
-        <Section>
-           <InfoContainer>
-                Informacije o profilu
-                <div>{userData.ime + " " + userData.prezime}</div>
-            </InfoContainer>
-            <ButtonNaslov>PROFIL ZA: Admin </ButtonNaslov>
-        </Section>
+       
+        <InfoContainer>
+            <div>Korisnik: {userData.ime + " " + userData.prezime}</div>
+            <div>Uloga: Admin</div>
+        </InfoContainer>
+    
     );
 };
 export default AdminProfil;
