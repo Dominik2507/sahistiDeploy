@@ -96,7 +96,7 @@ import Cookies from "js-cookie";
           }
           
           alert("Your session expired. Please login again.");
-          window.location.href = "http://localhost:3000";
+          window.location.href = "https://sahisti-server.herokuapp.com/";
           
         }
       })
