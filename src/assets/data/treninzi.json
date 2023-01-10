@@ -7,9 +7,20 @@
             "mjesto": "A109",
             "opis": "S obzirom na nadolazeće blagdane odlučili smo otkazati sve turnire i treninge do daljnjega.",
             "aktivni": true,
-            "osobaID": null,
+            "osobaID": 1,
             "trajanje": 45,
-            "trener": "Agadmator"
+            "trener": "Hikaru Nakamura"
+        },
+        {
+            "zanimljivostID": 4,
+            "datumTreninga": "1.1.2020",
+            "vrijemeTreninga": "20:00",
+            "mjesto": "D1",
+            "opis": "Trening",
+            "aktivni": false,
+            "osobaID": 2,
+            "trajanje": 30,
+            "trener": "Hikaru Nakamura"
         },
         {
             "zanimljivostID": 2,
@@ -17,8 +28,8 @@
             "vrijemeTreninga": "18:45",
             "mjesto": "D2",
             "opis": "S obzirom na nadolazeće blagdane odlučili smo otkazati sve turnire i treninge do daljnjega.",
-            "aktivni": true,
-            "osobaID": null,
+            "aktivni": false,
+            "osobaID": 3,
             "trajanje": 45,
             "trener": "Magnus Carlsen"
         },
@@ -29,7 +40,7 @@
             "mjesto": "B4",
             "opis": "S obzirom na nadolazeće blagdane odlučili smo otkazati sve turnire i treninge do daljnjega.",
             "aktivni": true,
-            "osobaID": null,
+            "osobaID": 2,
             "trajanje": 45,
             "trener": "Hikaru Nakamura"
         }

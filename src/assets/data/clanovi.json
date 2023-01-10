@@ -1,11 +1,27 @@
 {
     "clanovi":[
         {
-            "osobaID": 5,
+            "userId": 5,
             "ime": "Ivan",
             "prezime": "Horvat",
             "clanOd": "2021-07-08",
             "bodovi": 500,
+            "suspendiran": false
+        },
+        {
+            "userId": 6,
+            "ime": "Petar",
+            "prezime": "Horvat",
+            "clanOd": "2021-07-08",
+            "bodovi": 600,
+            "suspendiran": false
+        },
+        {
+            "userId": 7,
+            "ime": "Štef",
+            "prezime": "Horvat",
+            "clanOd": "2021-07-08",
+            "bodovi": 300,
             "suspendiran": false
         }
     ]

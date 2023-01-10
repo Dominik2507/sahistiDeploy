@@ -1,0 +1,90 @@
+{
+    "puzzles":[
+        {
+            "position":{
+                "a1": "wQ",
+                "h6": "wK",
+                "g8": "bK"
+            },
+            "solution":[
+                {"piece": "wQ", "from": "a1", "to": "g7"}
+            ],
+            "perspective": "white",
+            "description": "Mat u 1",
+            "level": 1
+        },
+        {
+            "position":{
+                "c1": "wR",
+                "e6": "wK",
+                "f8": "bK"
+            },
+            "solution":[
+                {"piece": "wR", "from": "c1", "to": "c7"},
+                {"piece": "bK", "from": "f8", "to": "g8"},
+                {"piece": "wK", "from": "e6", "to": "f6"},
+                {"piece": "bK", "from": "g8", "to": "h8"},
+                {"piece": "wK", "from": "f6", "to": "g6"},
+                {"piece": "bK", "from": "h8", "to": "g8"},
+                {"piece": "wR", "from": "c7", "to": "c8"}
+            ],
+            "perspective": "white",
+            "description": "Mat u 4",
+            "level": 4
+        },
+        {
+            "position":{
+                "a1": "wR",
+                "a2": "wP",
+                "a7": "bP",
+                "a8": "bR",
+                "b1": "",
+                "b2": "wP",
+                "b7": "bP",
+                "b8": "",
+                "c1": "wB",
+                "c2": "wP",
+                "c7": "bP",
+                "c8": "bB",
+                "d1": "wQ",
+                "d2": "wP",
+                "d7": "bP",
+                "d8": "",
+                "e1": "wK",
+                "e2": "",
+                "e7": "",
+                "e8": "bK",
+                "f1": "",
+                "f2": "wP",
+                "f7": "bP",
+                "f8": "bB",
+                "g1": "",
+                "g2": "wP",
+                "g7": "bP",
+                "g8": "",
+                "h1": "wR",
+                "h2": "wP",
+                "h7": "bP",
+                "h8": "bR",
+                "e4": "wP",
+                "e5": "bP",
+                "c3": "",
+                "c6": "bN",
+                "f3": "wN",
+                "f6": "bN",
+                "b5": "wB",
+                "d5": "wN",
+                "e6": "bQ"
+            },
+            "solution":[
+                {"piece": "wN", "from": "d5", "to": "c7"},
+                {"piece": "bK", "from": "e8", "to": "e7"},
+                {"piece": "wN", "from": "c7", "to": "e6"}
+            ],
+            "perspective": "white",
+            "description": "Ostvari prednost",
+            "level": 2
+        }
+
+    ]
+}

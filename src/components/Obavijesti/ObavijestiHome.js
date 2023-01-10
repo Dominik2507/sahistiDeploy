@@ -1,16 +1,23 @@
 import React, {useState, useEffect} from "react";
-import {ObavijestContainer, 
-    NaslovObavijesti, 
+import {ObavijestContainer,
+    NaslovObavijesti,
     OpisObavijesti,
     ObavijestFlexContainer,
     SectionNaslov,
-    Section
+    Section,
+    Button,
+    ButtonFlexContainer,
+    DatumObavijesti,
+    AutorObavijesti,
+    ButtonMali
 } from "./ObavijestiStyle";
 import Obavijesti from "../../assets/data/obavijesti.json"
-import { getObavijesti } from "../../utils/FetchFunction";
+import { deaktivirajObavijest, getObavijesti } from "../../utils/FetchFunction";
+import { Link } from 'react-router-dom'
 
 const ObavijestiHome = (props) => {
     const [obavijesti,setObavijesti]= useState([]);
+    const [toggle, setToggle]=useState(false)
     let rows=[];
 
     useEffect(()=>{
@@ -21,12 +28,15 @@ const ObavijestiHome = (props) => {
             }
         )
 
-    }, [])
-    for(let obavijest of true ? obavijesti :Obavijesti.obavijesti){
+    }, [toggle])
+    for(let obavijest of obavijesti){
+        if(obavijest.aktivni)
         rows.push(
         <ObavijestContainer key={obavijest.naslov + obavijest.datumObjave}>
-            <NaslovObavijesti>{obavijest.naslov}</NaslovObavijesti>
+            <NaslovObavijesti>{obavijest.naslov} </NaslovObavijesti>
             <OpisObavijesti>{obavijest.opis}</OpisObavijesti>
+            <DatumObavijesti>{"Datum objave: " + obavijest.datumObjave.split("T")[0]}</DatumObavijesti>
+            {props.role==="admin" && <ButtonMali onClick={() => {deaktivirajObavijest(obavijest.zanimljivostId).then(()=>setToggle(!toggle))}}>Deaktiviraj</ButtonMali> }
         </ObavijestContainer>
         );
 
@@ -37,8 +47,12 @@ const ObavijestiHome = (props) => {
             <ObavijestFlexContainer>
             {rows}
             </ObavijestFlexContainer>
+            { (props.role === undefined || props.role === "clan") ? <></> :
+            <ButtonFlexContainer><Link to="/dodajObavijest"><Button>Dodaj obavijest</Button></Link></ButtonFlexContainer>
+            }
         </Section>
     );
 };
 
 export default ObavijestiHome;
+

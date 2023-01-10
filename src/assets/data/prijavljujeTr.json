@@ -1,0 +1,12 @@
+{
+    "prijavljujeTr":[
+        {
+            "osobaID": 5,
+            "treningID": 1
+        },
+        {
+            "osobaID": 5,
+            "treningID": 2
+        }
+    ]
+}

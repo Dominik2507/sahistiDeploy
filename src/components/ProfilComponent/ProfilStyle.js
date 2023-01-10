@@ -9,7 +9,6 @@ export const Section = styled.section`
   display: inline-block;
   border-left: 3px solid #E98074;
   background-color: #ebe1d2;
-  
   padding: 10px 20px 20px 20px;
   
 `;

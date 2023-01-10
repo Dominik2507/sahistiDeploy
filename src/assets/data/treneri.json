@@ -5,6 +5,18 @@
             "ime": "Hikaru",
             "prezime": "Nakamura",
             "titula": "GM"
+        },
+        {   
+            "osobaID": 3,
+            "ime": "Magnus",
+            "prezime": "Carlsen",
+            "titula": "GM"
+        },
+        {   
+            "osobaID": 4,
+            "ime": "Luka",
+            "prezime": "Dud",
+            "titula": "L"
         }
     ]
 }

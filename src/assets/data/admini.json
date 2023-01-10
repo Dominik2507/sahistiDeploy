@@ -3,7 +3,8 @@
         {   
             "osobaID": 1,
             "ime": "Pero",
-            "prezime": "Perić"
+            "prezime": "Perić",
+            "email": "Admin@gmail.com"
         }
     ]
 }

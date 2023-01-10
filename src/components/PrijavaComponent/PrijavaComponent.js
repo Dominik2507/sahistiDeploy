@@ -1,4 +1,3 @@
-import Cookies from "js-cookie";
 import React, { useEffect } from "react";
 import Users from "../../assets/data/users.json"
 import { ButtonFlexContainer, ButtonNaslov, Section, InputButton, InputButtonContainer, InputLabel, FormSection, InputContainer, InputBox} from "./PrijavaStyle";
@@ -8,7 +7,7 @@ import { logIn } from "../../utils/FetchFunction";
 import { Link } from "react-router-dom";
 
 const PrijavaComponent= (props) => {
-    
+
     const [form, handleForm] = useState({username:"", password:""})
 
     let handleInputChange = (e)=>{
@@ -21,14 +20,10 @@ const PrijavaComponent= (props) => {
     let HandleSubmit= ()=> {
         logIn(form).then(
             (result)=>{
-                
-                let json=result;
-                if(json===undefined) return;
-                Cookies.set("user",JSON.stringify(json))
+                if(result===undefined) return;
                 document.getElementById("errorMsg").hidden=true;
                 let a = document.getElementById('formlink')
                 a.click()
-        
         })
     }
 
@@ -56,7 +51,7 @@ const PrijavaComponent= (props) => {
                     <InputButton type="submit" value="Prijava"></InputButton>
                 </InputButtonContainer>
                 <InputButtonContainer>Nemaš profil? <Link to="/registracija">Registriraj se!</Link></InputButtonContainer>
-            
+
             </form>
 
         </FormSection>

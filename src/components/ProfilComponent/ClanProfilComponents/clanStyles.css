@@ -1,0 +1,6 @@
+.clanProfilContainer{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    padding: 30px;
+    justify-content:space-around;
+}

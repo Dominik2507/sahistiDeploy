@@ -6,7 +6,7 @@ const Prijava = (props) => {
   return (
     <PrijavaComponent></PrijavaComponent>
   );
-  
+
 };
 
 export default Prijava;

@@ -1,9 +1,9 @@
 import React from "react";
 import ObavijestiHome from "../components/Obavijesti/ObavijestiHome"
 import TreninziHome from "../components/Treninzi/TreninziHome";
-import TurniriHome
+import TurniriHome from "../components/Turniri/TurniriHome";
 
-from "../components/Turniri/TurniriHome";
+
 const Home = (props) => {
 
   if(props.role===null) return (
@@ -14,12 +14,12 @@ const Home = (props) => {
 
   return (
     <>
-      <ObavijestiHome></ObavijestiHome>
+      <ObavijestiHome role = {props.role}></ObavijestiHome>
       <TreninziHome></TreninziHome>
       <TurniriHome></TurniriHome>
     </>
   );
-  
+
 };
 
 export default Home;

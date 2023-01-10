@@ -1,0 +1,12 @@
+{
+    "prijavljujeTu":[
+        {
+            "osobaID": 5,
+            "turnirID": 1
+        },
+        {
+            "osobaID": 5,
+            "turnirID": 2
+        }
+    ]
+}

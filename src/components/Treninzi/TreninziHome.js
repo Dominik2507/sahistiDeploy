@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from "react";
-import {TreningContainer, 
-    NaslovTreninga, 
+import React, {useState,useEffect} from "react";
+import { Link } from "react-router-dom";
+import {
+    TreningContainer,
+    NaslovTreninga,
     OpisTreninga,
     TreningFlexContainer,
     SectionNaslov,
-    Section
+    Section,
+    ButtonLink
 } from "./TreninziStyle";
 import Treninzi from "../../assets/data/treninzi.json"
 import { getTreninzi } from "../../utils/FetchFunction";
 
 const TreninziHome = (props) => {
     const [treninzi,setTreninzi]= useState([]);
-    let rows=[];
 
     useEffect(()=>{
         getTreninzi().then(
@@ -22,21 +24,22 @@ const TreninziHome = (props) => {
         )
 
     }, [])
-    for(let Trening of true ? treninzi: Treninzi.treninzi){
+    let rows=[];
+    for(let Trening of treninzi){
+        if(Trening.aktivni)
         rows.push(
-        <TreningContainer key={Trening.mjesto + Trening.vrijemeTreninga}>
-            <NaslovTreninga>{Trening.vrijemeTreninga+ ", "+ Trening.datumTreninga.split("T")[0] + ", " + Trening.trener.titula+ " " +  Trening.trener.ime + " "+ Trening.trener.prezime}</NaslovTreninga>
-            <OpisTreninga>{"traje: " + Trening.trajanje + " minuta, " + Trening.mjesto}</OpisTreninga>
+        <TreningContainer key={Trening.trener + Trening.mjesto + Trening.vrijemeTreninga}>
+            <NaslovTreninga>{Trening.trener["ime"] + " " + Trening.trener["prezime"] + ", " + Trening.mjesto}</NaslovTreninga>
+            <OpisTreninga>{Trening.vrijemeTreninga + " h" +", " + Trening.datumTreninga.split("T")[0] }</OpisTreninga>
         </TreningContainer>
         );
 
     }
-
     return (
         <Section>
-            <SectionNaslov>Treninzi</SectionNaslov>
+            <SectionNaslov>{<Link to="/treninzi" style={{textDecoration:'none'}}><ButtonLink>Treninzi</ButtonLink></Link>}</SectionNaslov>
             <TreningFlexContainer>
-                {rows}
+            {rows}
             </TreningFlexContainer>
         </Section>
     );

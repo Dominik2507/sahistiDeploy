@@ -6,7 +6,7 @@
             "naslov": "Bullet 2+1",
             "opis": "S obzirom na nadolazeće blagdane odlučili smo otkazati sve turnire i treninge do daljnjega.",
             "aktivni": true,
-            "osobaID": null,
+            "osobaID": 2,
             "vrijemeturnir": "20:00",
             "datumTurnira": "1.1.2023.",
             "mjesto": "FER"
@@ -16,8 +16,8 @@
             "datumObjave": "Rapid 10+15",
             "naslov": "Rapid 10+15",
             "opis": "S obzirom na nadolazeće blagdane odlučili smo otkazati sve turnire i treninge do daljnjega.",
-            "aktivni": true,
-            "osobaID": null,
+            "aktivni": false,
+            "osobaID": 2,
             "vrijemeturnir": "10:00",
             "datumTurnira": "1.1.2023.",
             "mjesto": "FER"
@@ -28,8 +28,30 @@
             "naslov": "Clasical",
             "opis": "S obzirom na nadolazeće blagdane odlučili smo otkazati sve turnire i treninge do daljnjega.",
             "aktivni": true,
-            "osobaID": null,
+            "osobaID": 2,
             "vrijemeturnir": "12:15",
+            "datumTurnira": "1.1.2023.",
+            "mjesto": "FER"
+        },
+        {
+            "zanimljivostID": 4,
+            "datumObjave": "Clasical",
+            "naslov": "Clasical",
+            "opis": "S obzirom na nadolazeće blagdane odlučili smo otkazati sve turnire i treninge do daljnjega.",
+            "aktivni": true,
+            "osobaID": 1,
+            "vrijemeturnir": "12:15",
+            "datumTurnira": "1.1.2023.",
+            "mjesto": "FER"
+        },
+        {
+            "zanimljivostID": 5,
+            "datumObjave": "Rapid 10+15",
+            "naslov": "Rapid 10+15",
+            "opis": "S obzirom na nadolazeće blagdane odlučili smo otkazati sve turnire i treninge do daljnjega.",
+            "aktivni": false,
+            "osobaID": 1,
+            "vrijemeturnir": "10:00",
             "datumTurnira": "1.1.2023.",
             "mjesto": "FER"
         }

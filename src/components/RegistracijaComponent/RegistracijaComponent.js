@@ -5,10 +5,10 @@ import { useState } from "react";
 import { registration } from "../../utils/FetchFunction";
 import { Link } from "react-router-dom";
 const RegistracijaComponent= (props) => {
-    
+
     const [form, handleForm] = useState(
         {
-            username:"", 
+            username:"",
             password:"",
             firstname:"",
             lastname:"",
@@ -17,7 +17,7 @@ const RegistracijaComponent= (props) => {
         }
     )
 
-    
+
 
     let handleInputChange = (e)=>{
         const target = e.target;
@@ -44,7 +44,7 @@ const RegistracijaComponent= (props) => {
     }
 
     return (
-        <>  
+        <>
         <FormSection>
             <form lang="hr" action="/" onSubmit={(e)=>{
                                 e.preventDefault();
@@ -73,8 +73,6 @@ const RegistracijaComponent= (props) => {
                 </InputContainer>
                 <InputContainer onChange={(e)=>handleInputChange(e)}>
                     <InputLabel for="role">Uloga: </InputLabel>
-                    <input type="radio" id="role1" name="role" value="admin" checked={form.role==="admin"}/>
-                    <label for="role1">Admin</label>
                     <input type="radio" id="role2" name="role" value="trener" checked={form.role==="trener"}/>
                     <label for="role2">Trener</label>
                     <input type="radio" id="role3" name="role" value="clan" checked={form.role==="clan"}/>

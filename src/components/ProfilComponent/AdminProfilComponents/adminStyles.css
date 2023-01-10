@@ -1,0 +1,23 @@
+.adminProfilContainer{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 30px;
+    justify-content:space-around;
+}
+
+.button{
+    display: inline-block;
+    width: 85px !important;
+    border: 4px solid #e98074;
+    height: 30px;
+    margin: 10px;
+    background-color: #efe7db;
+    color: #e85a4f;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.button:hover {
+    background-color: #d8c3a5;
+}
+

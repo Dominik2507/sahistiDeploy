@@ -6,7 +6,7 @@ const Registracija = (props) => {
   return (
     <RegistracijaComponent></RegistracijaComponent>
   );
-  
+
 };
 
-export default Registracija;
+export default Registracija
