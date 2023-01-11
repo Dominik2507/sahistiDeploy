@@ -530,9 +530,10 @@ export async function ocijeniTaktiku(grade) {
       if(response.status === 200) {
         //let a = document.getElementById('formlink');
         //a.click();
+        return response.json()
         console.log("Taktika ocijenjena") // ovo promijenit ovisno sta se zeli postic kod uspjeha ocijenjivanja taktike
       } else {
-        alert("Greska pri ocijenjivanju taktike");
+        return response.json();
         console.log("Greska")
       }
     })

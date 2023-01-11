@@ -28,7 +28,9 @@ const OcjenaForm= (props) => {
   
     let HandleSubmit= (e)=> {
         e.preventDefault();
-        ocijeniTaktiku(form.ocjena)
+        ocijeniTaktiku(form.ocjena).then(
+            props.setOcjenjeno(true)
+        )
         document.getElementById("resultText").innerText="Uspješno ocjenjena taktika"
         props.setShow("")
     }

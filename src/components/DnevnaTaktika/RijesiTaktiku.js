@@ -34,7 +34,7 @@ const RijesiTaktiku=({user})=> {
         setPuzzle(null)
         return;
       }
-      //console.log(result)
+      
       setPuzzle(result)
       
       let puzzleTemp=JSON.parse(result.ispravnoRjesenje)
@@ -47,6 +47,10 @@ const RijesiTaktiku=({user})=> {
     if(user.userId==null) return;
     getOdgovorClana().then((result)=>{
       if(result.clan!==null){
+        console.log("result", result)
+        if(result.ocjena>0){
+          setOcjenjeno(true)
+        }
         setSolved(true);
         setBodovi(result.bodovi)
       }
@@ -207,9 +211,9 @@ const RijesiTaktiku=({user})=> {
         <ButtonContainer>
             <div hidden={user.role===null}>
                 <ShowFormButton hidden={!solved} onClick={()=>{setVisible("greska"); setActive(false)}}>Prijavi grešku!</ShowFormButton>
-                <ShowFormButton hidden={!solved} onClick={()=>{setVisible("ocjena"); setActive(false)}}>Ocijeni taktiku!</ShowFormButton>
+                <ShowFormButton hidden={!solved || ocjenjeno} onClick={()=>{setVisible("ocjena"); setActive(false)}}>Ocijeni taktiku!</ShowFormButton>
                 <GreskaForm hide={show!=="greska"} setShow={setVisible}></GreskaForm>
-                <OcjenaForm hide={show!=="ocjena" && !ocjenjeno} setOcjenjeno={setOcjenjeno} setShow={setVisible}></OcjenaForm>
+                <OcjenaForm hide={show!=="ocjena"} setOcjenjeno={setOcjenjeno} setShow={setVisible}></OcjenaForm>
                 <div id='resultText'></div>
             </div>
         </ButtonContainer>
