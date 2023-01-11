@@ -21,8 +21,8 @@ const RijesiTaktiku=({user})=> {
   const [bodovi, setBodovi] = useState(0);
   const [solution, setSolution]=useState([])
   const [ocjenjeno, setOcjenjeno]= useState(false)
+  const [boardOrientation, setPerspective]=useState("white")
 
-  let boardOrientation=puzzle?.perspective || "white"
 
   let memberSolutionArray=[];
 
@@ -41,6 +41,7 @@ const RijesiTaktiku=({user})=> {
       console.log("puzzle", puzzleTemp)
       setPosition(puzzleTemp.position)
       setSolution(puzzleTemp.solution)
+      setPerspective(puzzleTemp.perspective)
       
     })
 
