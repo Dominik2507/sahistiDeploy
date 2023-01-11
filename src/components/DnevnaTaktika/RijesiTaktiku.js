@@ -6,6 +6,7 @@ import { ButtonContainer, ButtonContainer2, ChessboardContainer, ResultText, Sho
 import GreskaForm from "./Forms/GreskaForm.js"
 import OcjenaForm from './Forms/OcjenaForm';
 import { dodajOdgovor, getOdgovorClana, getTodayTaktika } from '../../utils/FetchFunction';
+import styled from 'styled-components';
 
 
 
@@ -19,8 +20,9 @@ const RijesiTaktiku=({user})=> {
   const [solved, setSolved] = useState(false)
   const [bodovi, setBodovi] = useState(0);
   const [solution, setSolution]=useState([])
+  const [ocjenjeno, setOcjenjeno]= useState(false)
 
-  let boardOrientation=puzzle?.perspective
+  let boardOrientation=puzzle?.perspective || "white"
 
   let memberSolutionArray=[];
 
@@ -159,7 +161,7 @@ const RijesiTaktiku=({user})=> {
     }
   
   return (
-    puzzle===null || Object.keys(position).length==0 ? <div> Danas nema dnevne taktike</div> : 
+    puzzle===null || Object.keys(position).length==0 ? <NemaDnevne> Danas nema dnevne taktike</NemaDnevne> : 
     <>
         <Timer>
             {puzzle?.opis}
@@ -179,7 +181,10 @@ const RijesiTaktiku=({user})=> {
                 position={position} 
                 boardOrientation={boardOrientation} 
                 
-                //isDraggablePiece={({piece, square})=> piece.charAt(0)===boardOrientation.charAt(0)}
+                isDraggablePiece={Object.keys(position).length==0 ? false :  ({piece, square})=>{
+                  
+                  return piece.indexOf(boardOrientation?.charAt(0))==0;
+                  }}
                 onPieceDrop={(source, target, piece)=> movePiece(source, target, piece)}
             />
             
@@ -204,7 +209,7 @@ const RijesiTaktiku=({user})=> {
                 <ShowFormButton hidden={!solved} onClick={()=>{setVisible("greska"); setActive(false)}}>Prijavi grešku!</ShowFormButton>
                 <ShowFormButton hidden={!solved} onClick={()=>{setVisible("ocjena"); setActive(false)}}>Ocijeni taktiku!</ShowFormButton>
                 <GreskaForm hide={show!=="greska"} setShow={setVisible}></GreskaForm>
-                <OcjenaForm hide={show!=="ocjena"} setShow={setVisible}></OcjenaForm>
+                <OcjenaForm hide={show!=="ocjena" && !ocjenjeno} setOcjenjeno={setOcjenjeno} setShow={setVisible}></OcjenaForm>
                 <div id='resultText'></div>
             </div>
         </ButtonContainer>
@@ -218,3 +223,11 @@ const RijesiTaktiku=({user})=> {
 }
 
 export default RijesiTaktiku;
+
+
+const NemaDnevne=styled.div`
+  color: #e85a4f;
+  text-align: center;
+  font-size: 2rem;
+  padding: 100px;
+`
