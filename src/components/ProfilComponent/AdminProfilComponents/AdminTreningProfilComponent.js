@@ -30,7 +30,7 @@ const AdminTreningProfilComponent = ({user}) => {
         if(Trening.aktivni == false){
             rowsPov.push(
                 <TreningContainer key={Trening.mjesto + Trening.vrijemeTreninga}>
-                    <NaslovTreninga>{Trening.vrijemeTreninga+ ", "+ Trening.datumTreninga.split("T")[0] + ", " + " " + Trening.trener.titula + " " +Trening.trener.ime + " " + Trening.trener.prezime}</NaslovTreninga>
+                    <NaslovTreninga>{Trening.vrijemeTreninga+ ", "+ (new Date( Trening.datumTreninga)).toLocaleDateString("en-GB") + ", " + " " + Trening.trener.titula + " " +Trening.trener.ime + " " + Trening.trener.prezime}</NaslovTreninga>
                     <OpisTreninga> {"traje: " + Trening.trajanje + " minuta, " + Trening.mjesto} </OpisTreninga>
                     <button class="button" onClick={() => {Trening.aktivni = true; setStanje(!stanje); aktivirajTr(Trening.treningId)}}>Aktiviraj</button>
                 </TreningContainer>
@@ -38,7 +38,7 @@ const AdminTreningProfilComponent = ({user}) => {
         } else {
             rowsAkt.push(
                 <TreningContainer key={Trening.mjesto + Trening.vrijemeTreninga}>
-                    <NaslovTreninga>{Trening.vrijemeTreninga+ ", "+ Trening.datumTreninga.split("T")[0] + ", " + Trening.trener.ime +" "+ Trening.trener.prezime}</NaslovTreninga>
+                    <NaslovTreninga>{Trening.vrijemeTreninga+ ", "+ (new Date( Trening.datumTreninga)).toLocaleDateString("en-GB") + ", " + Trening.trener.ime +" "+ Trening.trener.prezime}</NaslovTreninga>
                     <OpisTreninga> {"traje: " + Trening.trajanje + " minuta, " + Trening.mjesto} </OpisTreninga>
                     <button class="button" onClick={() => {Trening.aktivni = false; setStanje(!stanje); deaktivirajTr(Trening.treningId)}}>Deaktiviraj</button>
                 </TreningContainer>

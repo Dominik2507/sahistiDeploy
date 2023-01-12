@@ -29,7 +29,7 @@ const ClanTurnirProfilComponent = (props) => {
         rows.push(
         <TurnirContainer key={prijavaTu.naziv + prijavaTu.mjesto + prijavaTu.vrijemeturnir}>
             <NaslovTurnira>{prijavaTu.naziv + ", " + prijavaTu.mjesto}</NaslovTurnira>
-            <OpisTurnira>{prijavaTu.vrijemeTurnir + " h" +", " + prijavaTu?.datumTurnira.split("T")[0] }</OpisTurnira>
+            <OpisTurnira>{prijavaTu.vrijemeTurnir + " h" +", " + (new Date(prijavaTu?.datumTurnira)).toLocaleDateString("en-GB") }</OpisTurnira>
         </TurnirContainer>
         );
     }

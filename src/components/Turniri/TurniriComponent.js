@@ -59,7 +59,7 @@ const TurniriComponent = (props) => {
         <TurnirContainer key={Turnir.naziv + Turnir.mjesto + Turnir.vrijemeTurnir}>
             <NaslovTurnira>{Turnir.naziv }</NaslovTurnira>
             <MjestoTurnira>{"Mjesto održavanja turnira: " + Turnir.mjesto}</MjestoTurnira>
-            <DatumTurnira>{"Datum održavanja turnira: " + Turnir.datumTurnira.split("T")[0]}</DatumTurnira>
+            <DatumTurnira>{"Datum održavanja turnira: " + (new Date(Turnir.datumTurnira)).toLocaleDateString("en-GB")}</DatumTurnira>
             <VrijemeTurnira>{"Vrijeme održavanja turnira: " + Turnir.vrijemeTurnir + "h"}</VrijemeTurnira>
             <VrijemeTurnira>{turnirObject.popunjenost + "/" + Turnir.kapacitet + " mjesta zauzeto"}</VrijemeTurnira>
             {props.role === "clan" ?

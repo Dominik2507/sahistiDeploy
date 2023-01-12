@@ -33,7 +33,7 @@ const TurniriHome = (props) => {
         rows.push(
             <TurnirContainer key={Turnir.naziv + Turnir.mjesto + Turnir.vrijemeTurnir}>
                 <NaslovTurnira>{Turnir.naziv + ", " + Turnir.mjesto}</NaslovTurnira>
-                <OpisTurnira>{Turnir.vrijemeTurnir + " h" +", " + Turnir.datumTurnira.split("T")[0] }</OpisTurnira>
+                <OpisTurnira>{Turnir.vrijemeTurnir + " h" +", " + (new Date(Turnir.datumTurnira)).toLocaleDateString("en-GB") }</OpisTurnira>
                 <OpisTurnira>{turnirObject.popunjenost +"/" + Turnir.kapacitet + " mjesta zauzeto" }</OpisTurnira>
             </TurnirContainer>
         );

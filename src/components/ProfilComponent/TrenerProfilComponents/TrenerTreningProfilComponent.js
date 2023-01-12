@@ -30,14 +30,14 @@ const TrenerTreningProfilComponent = ({user}) => {
         if(Trening.aktivni == false){
             rowsPov.push(
                 <TreningContainer key={Trening.mjesto + Trening.vrijemeTreninga}>
-                    <NaslovTreninga>{Trening.vrijemeTreninga+ ", "+ Trening.datumTreninga.split("T")[0]}</NaslovTreninga>
+                    <NaslovTreninga>{Trening.vrijemeTreninga+ ", "+ (new Date( Trening.datumTreninga)).toLocaleDateString("en-GB")}</NaslovTreninga>
                     <OpisTreninga> {"traje: " + Trening.trajanje + " minuta, " + Trening.mjesto} </OpisTreninga>
                 </TreningContainer>
             );
         } else {
             rowsAkt.push(
                 <TreningContainer key={Trening.mjesto + Trening.vrijemeTreninga}>
-                    <NaslovTreninga>{Trening.vrijemeTreninga+ ", "+ Trening.datumTreninga.split("T")[0]}</NaslovTreninga>
+                    <NaslovTreninga>{Trening.vrijemeTreninga+ ", "+ (new Date( Trening.datumTreninga)).toLocaleDateString("en-GB")}</NaslovTreninga>
                     <OpisTreninga> {"traje: " + Trening.trajanje + " minuta, " + Trening.mjesto} </OpisTreninga>
                 </TreningContainer>
             );

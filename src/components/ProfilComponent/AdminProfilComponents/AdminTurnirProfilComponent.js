@@ -32,7 +32,7 @@ const AdminTurnirProfilComponent = ({user}) => {
             rowsAkt.push(
             <TurnirContainer key={Turnir.naziv + Turnir.mjesto + Turnir.vrijemeturnir}>
                 <NaslovTurnira>{Turnir.naziv + ", " + Turnir.mjesto}</NaslovTurnira>
-                <OpisTurnira>{Turnir.vrijemeTurnir + " h" +", " + Turnir.datumTurnira.split("T")[0] }</OpisTurnira>
+                <OpisTurnira>{Turnir.vrijemeTurnir + " h" +", " + (new Date(Turnir.datumTurnira)).toLocaleDateString("en-GB") }</OpisTurnira>
                 <button class="button" onClick={() => {Turnir.aktivni = false; setStanje(!stanje); deaktivirajTu(Turnir.turnirId)}}>Deaktiviraj</button>
             </TurnirContainer>
             );
@@ -40,7 +40,7 @@ const AdminTurnirProfilComponent = ({user}) => {
             rowsPov.push(
                 <TurnirContainer key={Turnir.naziv + Turnir.mjesto + Turnir.vrijemeTurnir}>
                     <NaslovTurnira>{Turnir.naziv + ", " + Turnir.mjesto}</NaslovTurnira>
-                    <OpisTurnira>{Turnir.vrijemeTurnir + " h" +", " + Turnir.datumTurnira.split("T")[0] }</OpisTurnira>
+                    <OpisTurnira>{Turnir.vrijemeTurnir + " h" +", " + (new Date(Turnir.datumTurnira)).toLocaleDateString("en-GB") }</OpisTurnira>
                     <button class="button" onClick={() => {Turnir.aktivni = true; setStanje(!stanje); aktivirajTu(Turnir.turnirId)}}>Aktiviraj</button>
                 </TurnirContainer>
                 );

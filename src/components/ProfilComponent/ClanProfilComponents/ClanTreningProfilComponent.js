@@ -27,7 +27,7 @@ const ClanTreningProfilComponent = (props) => {
     for(let prijavaTr of prijaveTr){
         rows.push(
         <TreningContainer key={prijavaTr.mjesto + prijavaTr.vrijemeTreninga}>
-            <NaslovTreninga>{prijavaTr.vrijemeTreninga+ ", "+ prijavaTr.datumTreninga.split("T")[0] + ", " + prijavaTr.trener.titula + " " + prijavaTr.trener.ime + " " + prijavaTr.trener.prezime}</NaslovTreninga>
+            <NaslovTreninga>{prijavaTr.vrijemeTreninga+ ", "+ (new Date(prijavaTr.datumTreninga)).toLocaleDateString("en-GB")  + ", " + prijavaTr.trener.titula + " " + prijavaTr.trener.ime + " " + prijavaTr.trener.prezime}</NaslovTreninga>
             <OpisTreninga> {"traje: " + prijavaTr.trajanje + " minuta, " + prijavaTr.mjesto} </OpisTreninga>
         </TreningContainer>
         );

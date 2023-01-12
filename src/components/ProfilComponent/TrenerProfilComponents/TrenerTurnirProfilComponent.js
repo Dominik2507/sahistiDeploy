@@ -31,14 +31,14 @@ const TrenerTurnirProfilComponent = ({user}) => {
             rowsAkt.push(
             <TurnirContainer key={turnir.naziv + turnir.mjesto + turnir.vrijemeturnir}>
                 <NaslovTurnira>{turnir.naziv + ", " + turnir.mjesto}</NaslovTurnira>
-                <OpisTurnira>{turnir.vrijemeTurnir + " h" +", " + turnir.datumTurnira.split("T")[0] }</OpisTurnira>
+                <OpisTurnira>{turnir.vrijemeTurnir + " h" +", " + (new Date(turnir.datumTurnira)).toLocaleDateString("en-GB") }</OpisTurnira>
             </TurnirContainer>
             );
         } else {
             rowsPov.push(
                 <TurnirContainer key={turnir.naziv + turnir.mjesto + turnir.vrijemeTurnir}>
                     <NaslovTurnira>{turnir.naziv + ", " + turnir.mjesto}</NaslovTurnira>
-                    <OpisTurnira>{turnir.vrijemeTurnir + " h" +", " + turnir.datumTurnira.split("T")[0] }</OpisTurnira>
+                    <OpisTurnira>{turnir.vrijemeTurnir + " h" +", " + (new Date(turnir.datumTurnira)).toLocaleDateString("en-GB") }</OpisTurnira>
                 </TurnirContainer>
                 );
         }

@@ -35,7 +35,7 @@ const ObavijestiHome = (props) => {
         <ObavijestContainer key={obavijest.naslov + obavijest.datumObjave}>
             <NaslovObavijesti>{obavijest.naslov} </NaslovObavijesti>
             <OpisObavijesti>{obavijest.opis}</OpisObavijesti>
-            <DatumObavijesti>{"Datum objave: " + obavijest.datumObjave.split("T")[0]}</DatumObavijesti>
+            <DatumObavijesti>{"Datum objave: " + (new Date(obavijest.datumObjave)).toLocaleDateString("en-GB")}</DatumObavijesti>
             {props.role==="admin" && <ButtonMali onClick={() => {deaktivirajObavijest(obavijest.zanimljivostId).then(()=>setToggle(!toggle))}}>Deaktiviraj</ButtonMali> }
         </ObavijestContainer>
         );

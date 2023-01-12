@@ -62,7 +62,7 @@ const TreninziComponent = (props) => {
         <TreningContainer key={Trening.trener + Trening.mjesto + Trening.vrijemeTrening}>
             <NaslovTreninga>{Trening.trener["ime"] + " " + Trening.trener["prezime"]}</NaslovTreninga>
             <MjestoTreninga>{"Mjesto održavanja treninga: " + Trening.mjesto}</MjestoTreninga>
-            <DatumTreninga>{"Datum održavanja treninga: " + Trening.datumTreninga.split("T")[0]}</DatumTreninga>
+            <DatumTreninga>{"Datum održavanja treninga: " + (new Date(Trening.datumTreninga)).toLocaleDateString("en-GB")}</DatumTreninga>
             <VrijemeTreninga>{"Vrijeme održavanja treninga: " + Trening.vrijemeTreninga + "h"}</VrijemeTreninga>
             {props.role === "clan" ?
             <ButtonFlexContainer><Button onClick={() => handleClick(Trening.treningId)}>{ prijavljeni.includes(Trening.treningId) ? "Odjavi se" : "Prijavi se"}</Button></ButtonFlexContainer> : <></>

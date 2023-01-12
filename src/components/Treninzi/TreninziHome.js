@@ -30,7 +30,7 @@ const TreninziHome = (props) => {
         rows.push(
         <TreningContainer key={Trening.trener + Trening.mjesto + Trening.vrijemeTreninga}>
             <NaslovTreninga>{Trening.trener["ime"] + " " + Trening.trener["prezime"] + ", " + Trening.mjesto}</NaslovTreninga>
-            <OpisTreninga>{Trening.vrijemeTreninga + " h" +", " + Trening.datumTreninga.split("T")[0] }</OpisTreninga>
+            <OpisTreninga>{Trening.vrijemeTreninga + " h" +", " + (new Date(Trening.datumTreninga)).toLocaleDateString("en-GB")}</OpisTreninga>
         </TreningContainer>
         );
 
