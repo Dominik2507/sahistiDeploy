@@ -21,10 +21,10 @@ const TurniriComponent = (props) => {
     useEffect(()=>{
         getTurniri().then(
             (item)=>{
-               
+               console.log(item)
                 setTurniri(item)
                 getPrijaveTu().then((prijavljeni)=>{
-                     console.log(prijavljeni)
+                     console.log("prijavljeni",prijavljeni)
                     let temp=[];
                     for(let item of prijavljeni){
                         temp.push(item.turnirId)
@@ -52,16 +52,24 @@ const TurniriComponent = (props) => {
     }
 
     let rows=[];
-    for(let Turnir of turniri){
+    for(let turnirObject of turniri){
+        let Turnir=turnirObject.turnir;
         if(Turnir.aktivni)
         rows.push(
         <TurnirContainer key={Turnir.naziv + Turnir.mjesto + Turnir.vrijemeTurnir}>
-            <NaslovTurnira>{Turnir.naziv}</NaslovTurnira>
+            <NaslovTurnira>{Turnir.naziv }</NaslovTurnira>
             <MjestoTurnira>{"Mjesto održavanja turnira: " + Turnir.mjesto}</MjestoTurnira>
             <DatumTurnira>{"Datum održavanja turnira: " + Turnir.datumTurnira.split("T")[0]}</DatumTurnira>
             <VrijemeTurnira>{"Vrijeme održavanja turnira: " + Turnir.vrijemeTurnir + "h"}</VrijemeTurnira>
+            <VrijemeTurnira>{turnirObject.popunjenost + "/" + Turnir.kapacitet + " mjesta zauzeto"}</VrijemeTurnira>
             {props.role === "clan" ?
-            <ButtonFlexContainer><Button onClick={() => handleClick(Turnir.turnirId)}>{ prijavljeni.includes(Turnir.turnirId) ? "Odjavi se" : "Prijavi se"}</Button></ButtonFlexContainer> : <></>
+            <ButtonFlexContainer>
+                {turnirObject.popunjenost < Turnir.kapacitet || prijavljeni.includes(Turnir.turnirId) ?
+                <Button onClick={() => handleClick(Turnir.turnirId)}>{ prijavljeni.includes(Turnir.turnirId) ? "Odjavi se" : "Prijavi se"}</Button>
+                :
+                ""
+                }
+            </ButtonFlexContainer> : <></>
             }
             {(props.role === "admin") ?
             <ButtonFlexContainer><Button onClick={() => handleObrisiClick(Turnir.turnirId)}>Obriši</Button></ButtonFlexContainer> : <></>

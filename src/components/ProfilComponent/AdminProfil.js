@@ -23,7 +23,7 @@ const AdminProfil= ({user}) => {
        <>
             <InfoContainer>
                 <div>Korisnik: {userData.ime + " " + userData.prezime}</div>
-                <div>Uloga: Admin</div>
+                <div id="ulogaType">Uloga: Admin</div>
                 
             </InfoContainer>
             <div><Link to="/members">Vidi sve korisnike</Link></div>

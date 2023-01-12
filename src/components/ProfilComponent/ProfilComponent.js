@@ -19,7 +19,7 @@ const ProfilComponent= ({user, LogOut}) => {
            {user.role==="clan" ? <ClanProfil user={user}></ClanProfil>: <></>}
 
             <ButtonFlexContainer>
-            <Button onClick={LogOut}> Odjavi se</Button>
+            <Button id="logoutButton" onClick={LogOut}> Odjavi se</Button>
             <a href="/" hidden id="logOut"></a>
             </ButtonFlexContainer>
 

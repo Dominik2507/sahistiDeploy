@@ -1,7 +1,7 @@
- const SERVER_URL = "https://sahisti-server.herokuapp.com";
- const CLIENT_URL = "https://sahisti-server.herokuapp.com";
-//const SERVER_URL = "http://localhost:8080";
-//const CLIENT_URL = "http://localhost:3000";
+// const SERVER_URL = "https://sahisti-server.herokuapp.com";
+// const CLIENT_URL = "https://sahisti-server.herokuapp.com";
+const SERVER_URL = "http://localhost:8080";
+const CLIENT_URL = "http://localhost:3000";
 
 export async function logIn(form) {
   return await fetch(

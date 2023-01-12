@@ -22,8 +22,8 @@ const ClanProfil= ({user}) => {
     return (
         <>
             <InfoContainer>
-                <div>Korisnik: {userData.ime + " " + userData.prezime}</div>
-                <div>Uloga: Član</div>
+                <div id="korisnikImePrez">Korisnik: {userData.ime + " " + userData.prezime}</div>
+                <div id="ulogaType">Uloga: Član</div>
                 <div>Član od: {userData.clanOd}</div>
                 <div>Bodovi: {userData.bodovi}</div>
             </InfoContainer>

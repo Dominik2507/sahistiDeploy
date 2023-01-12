@@ -35,7 +35,7 @@ const TrenerProfil= ({user}) => {
         <>
             <InfoContainer>
                 <div>Korisnik: {userData.titula + " "+ userData.ime + " " + userData.prezime}</div>
-                <div>Uloga: Trener</div>
+                <div id="ulogaType">Uloga: Trener</div>
             </InfoContainer>
             <PrijaveGreskeContainer>
                 { 

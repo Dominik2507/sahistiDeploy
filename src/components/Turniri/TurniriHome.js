@@ -20,19 +20,21 @@ const TurniriHome = (props) => {
     useEffect(()=>{
         getTurniri().then(
             (item)=>{
-                //console.log(item)
+                console.log(item)
                 setTurniri(item)
             }
         )
 
     }, [])
     let rows=[];
-    for(let Turnir of turniri){
+    for(let turnirObject of turniri){
+        let Turnir=turnirObject.turnir;
         if(Turnir.aktivni)
         rows.push(
             <TurnirContainer key={Turnir.naziv + Turnir.mjesto + Turnir.vrijemeTurnir}>
                 <NaslovTurnira>{Turnir.naziv + ", " + Turnir.mjesto}</NaslovTurnira>
                 <OpisTurnira>{Turnir.vrijemeTurnir + " h" +", " + Turnir.datumTurnira.split("T")[0] }</OpisTurnira>
+                <OpisTurnira>{turnirObject.popunjenost +"/" + Turnir.kapacitet + " mjesta zauzeto" }</OpisTurnira>
             </TurnirContainer>
         );
     }

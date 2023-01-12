@@ -80,7 +80,7 @@ const RegistracijaComponent= (props) => {
                 </InputContainer>
                 <InputButtonContainer>
                     <InputButton type="reset" onClick={()=>handleForm({username:"", password:""})}></InputButton>
-                    <InputButton type="submit" value="Registriraj se"></InputButton>
+                    <InputButton id="registerButton" type="submit" value="Registriraj se"></InputButton>
                 </InputButtonContainer>
                 <InputButtonContainer>Imaš profil? <Link to="/prijava">Prijavi se!</Link></InputButtonContainer>
             </form>

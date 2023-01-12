@@ -20,13 +20,14 @@ const AdminTurnirProfilComponent = ({user}) => {
     useEffect(()=>{
         getTurniri().then(
             (item)=>{
-                //console.log(item)
+                console.log(item)
                 setTurniri(item)
             }
         )
         
     }, [])
-    for(let Turnir of turniri){
+    for(let turnirObject of turniri){
+        let Turnir=turnirObject.turnir
         if(Turnir.aktivni == true){
             rowsAkt.push(
             <TurnirContainer key={Turnir.naziv + Turnir.mjesto + Turnir.vrijemeturnir}>

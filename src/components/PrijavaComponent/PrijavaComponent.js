@@ -48,7 +48,7 @@ const PrijavaComponent= (props) => {
                 </InputButtonContainer>
                 <InputButtonContainer>
                     <InputButton type="reset" onClick={()=>handleForm({username:"", password:""})}></InputButton>
-                    <InputButton type="submit" value="Prijava"></InputButton>
+                    <InputButton id="prijava" type="submit" value="Prijava"></InputButton>
                 </InputButtonContainer>
                 <InputButtonContainer>Nemaš profil? <Link to="/registracija">Registriraj se!</Link></InputButtonContainer>
 
