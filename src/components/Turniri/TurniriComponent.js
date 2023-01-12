@@ -71,9 +71,7 @@ const TurniriComponent = (props) => {
                 }
             </ButtonFlexContainer> : <></>
             }
-            {(props.role === "admin") ?
-            <ButtonFlexContainer><Button onClick={() => handleObrisiClick(Turnir.turnirId)}>Obriši</Button></ButtonFlexContainer> : <></>
-            }
+        
         </TurnirContainer>
         );
 

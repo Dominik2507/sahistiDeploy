@@ -67,9 +67,7 @@ const TreninziComponent = (props) => {
             {props.role === "clan" ?
             <ButtonFlexContainer><Button onClick={() => handleClick(Trening.treningId)}>{ prijavljeni.includes(Trening.treningId) ? "Odjavi se" : "Prijavi se"}</Button></ButtonFlexContainer> : <></>
             }
-            {(props.role === "admin") ?
-            <ButtonFlexContainer><Button onClick={() => handleObrisiClick(Trening.treningId)}>Obriši</Button></ButtonFlexContainer> : <></>
-            }
+           
         </TreningContainer>
         );
 
